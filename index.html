@@ -10,6 +10,7 @@
         <title>Keyboard Factory</title>
         <meta name="description" content="A keyboard-operated factory building game" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles/variables.css" />
         <link rel="stylesheet" href="styles/main.css" />
     </head>
     <body>
@@ -19,8 +20,52 @@
                 <a href="#">upgrade your browser</a> to improve your experience.
             </p>
         <![endif]-->
-        <h1>Hello</h1>
+        <h1 id="main-title">The Great Keyboard Factory （＾ω＾）</h1>
+
+        <section id="keyboard">
+            <div class="row" id="row1">
+                <div class="key" id="81">Q</div>
+                <div class="key" id="87">W</div>
+                <div class="key" id="69">E</div>
+                <div class="key" id="82">R</div>
+                <div class="key" id="84">T</div>
+                <div class="key" id="89">Y</div>
+                <div class="key" id="85">U</div>
+                <div class="key" id="73">I</div>
+                <div class="key" id="79">O</div>
+                <div class="key" id="80">P</div>
+                <div class="key" id="221"></div>
+                <div class="key" id="186"></div>
+            </div>
+            <div class="row" id="row2">
+                <div class="key" id="65">A</div>
+                <div class="key" id="83">S</div>
+                <div class="key" id="68">D</div>
+                <div class="key" id="70">F</div>
+                <div class="key" id="71">G</div>
+                <div class="key" id="72">H</div>
+                <div class="key" id="74">J</div>
+                <div class="key" id="75">K</div>
+                <div class="key" id="76">L</div>
+                <div class="key" id="192"></div>
+                <div class="key" id="222"></div>
+                <div class="key" id="191"></div>
+            </div>
+            <div class="row" id="row3">
+                <div class="key" id="90">Z</div>
+                <div class="key" id="88">X</div>
+                <div class="key" id="67">C</div>
+                <div class="key" id="86">V</div>
+                <div class="key" id="66">B</div>
+                <div class="key" id="78">N</div>
+                <div class="key" id="77">M</div>
+                <div class="key" id="188"></div>
+                <div class="key" id="190"></div>
+                <div class="key" id="189"></div>
+            </div>
+        </section>
 
         <script src="scripts/main.js" async defer></script>
+        <script src="scripts/events.js" async defer></script>
     </body>
 </html>

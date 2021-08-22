@@ -1,0 +1,18 @@
+:root {
+    --main-bg-color: #0fb9b1;
+}
+
+@font-face {
+    font-family: 'KleeOne-Regular';
+    src: url('../res/fonts/KleeOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'KleeOne-SemiBold';
+    src: url('../res/fonts/KleeOne-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'RampartOne';
+    src: url('../res/fonts/RampartOne-Regular.ttf');
+}

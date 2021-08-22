@@ -1,0 +1,65 @@
+body {
+    background-color: var(--main-bg-color);
+    color: white;
+    font-family: 'KleeOne-Regular';
+}
+
+#main-title {
+    font-family: 'RampartOne', sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+#keyboard {
+    margin: auto;
+    width: fit-content;
+}
+
+.row {
+    display: flex;
+}
+
+#row2 {
+    position: relative;
+    left: 25px;
+}
+
+#row3 {
+    position: relative;
+    left: 50px;
+}
+
+.key {
+    position: relative;
+    font-family: 'KleeOne-SemiBold';
+    font-size: large;
+    background-color: white;
+    color: black;
+    box-shadow: #d1d8e0 0px 5px 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 4px;
+    user-select: none;
+}
+
+/* Button press */
+
+@keyframes clickfade {
+    from {
+        background-color: #fed330;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+.key.fade {
+    animation: clickfade 0.5s 1;
+}
+
+.key.active {
+    top: 4px;
+    box-shadow: #d1d8e0 0px 1px 0px;
+}
