@@ -29,7 +29,13 @@ body {
     left: 50px;
 }
 
-.key {
+@keyframes gearturn {
+    to {
+        background-position: 64px 0;
+    }
+}
+
+#keyboard .key {
     position: relative;
     font-family: 'KleeOne-SemiBold';
     font-size: large;
@@ -44,6 +50,25 @@ body {
     user-select: none;
 }
 
+#keyboard .key .label {
+    position: absolute;
+}
+
+#keyboard .key .item {
+    width: 40px;
+    height: 40px;
+    margin-left: 12px;
+    margin-top: 12px;
+
+    background-image: url(../res/img/gear.png);
+    background-size: 80px;
+    background-position: 0 0;
+}
+
+#keyboard.second-image .key .item {
+    background-position: 40px 0;
+}
+
 /* Button press */
 
 @keyframes clickfade {
@@ -55,18 +80,25 @@ body {
     }
 }
 
-.key.fade {
+#keyboard .key.fade {
     animation: clickfade 0.5s 1;
 }
 
-.key.active {
+#keyboard .key.active {
     top: 4px;
     box-shadow: #d1d8e0 0px 1px 0px;
 }
 
+#numbar-details {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 #number-bar {
     display: flex;
-    margin: 50px auto;
+    margin: 0 auto;
     width: fit-content;
 }
 

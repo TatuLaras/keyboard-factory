@@ -5,6 +5,7 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+        <script src="https://kit.fontawesome.com/96042d4079.js" crossorigin="anonymous"></script>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Keyboard Factory</title>
@@ -24,7 +25,10 @@
 
         <div id="keyboard">
             <div class="row" id="row1">
-                <div class="key" id="81">Q</div>
+                <div class="key" id="81">
+                    <div class="label">Q</div>
+                    <div class="item"></div>
+                </div>
                 <div class="key" id="87">W</div>
                 <div class="key" id="69">E</div>
                 <div class="key" id="82">R</div>
@@ -65,17 +69,19 @@
             </div>
         </div>
 
+        <p id="numbar-details">Choose <b>an action</b> from the hotbar</p>
+
         <div id="number-bar">
-            <div class="num-slot slot-1" id="49">1</div>
-            <div class="num-slot slot-2" id="50">2</div>
-            <div class="num-slot slot-3" id="51">3</div>
-            <div class="num-slot slot-4" id="52">4</div>
-            <div class="num-slot slot-5" id="53">5</div>
-            <div class="num-slot slot-6" id="54">6</div>
-            <div class="num-slot slot-7" id="55">7</div>
-            <div class="num-slot slot-8" id="56">8</div>
-            <div class="num-slot slot-9" id="57">9</div>
-            <div class="num-slot slot-0" id="48">0</div>
+            <div class="key num-slot slot-1" id="49">1</div>
+            <div class="key num-slot slot-2" id="50">2</div>
+            <div class="key num-slot slot-3" id="51">3</div>
+            <div class="key num-slot slot-4" id="52">4</div>
+            <div class="key num-slot slot-5" id="53">5</div>
+            <div class="key num-slot slot-6" id="54">6</div>
+            <div class="key num-slot slot-7" id="55">7</div>
+            <div class="key num-slot slot-8" id="56">8</div>
+            <div class="key num-slot slot-9" id="57">9</div>
+            <div class="key num-slot slot-0" id="48">0</div>
         </div>
 
         <script src="scripts/main.js" async defer></script>
