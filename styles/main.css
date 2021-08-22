@@ -63,3 +63,31 @@ body {
     top: 4px;
     box-shadow: #d1d8e0 0px 1px 0px;
 }
+
+#number-bar {
+    display: flex;
+    margin: 50px auto;
+    width: fit-content;
+}
+
+.num-slot {
+    position: relative;
+    font-family: 'KleeOne-SemiBold';
+    font-size: large;
+    border: 2px solid white;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 4px;
+    user-select: none;
+}
+
+.num-slot.active {
+    top: 5px;
+}
+
+.num-slot.selected {
+    border: 4px solid #fed330;
+    padding: 3px;
+}
