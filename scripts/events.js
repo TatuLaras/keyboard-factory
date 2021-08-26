@@ -25,18 +25,22 @@ const buttonDown = (id) => {
                 break;
             }
         }
+    } else {
+        performSelectedActionForKey(id);
     }
 };
 
-document.querySelectorAll('.key').forEach((k) => {
-    k.addEventListener(
-        'mousedown',
-        (event) => {
-            buttonDown(event.target.id);
-        },
-        false
-    );
-});
+document.addEventListener(
+    'mousedown',
+    (event) => {
+        var key = findAttatchedObjectWithClass(event.target, 'key');
+
+        if (key && key.classList.contains('key')) {
+            buttonDown(key.id);
+        }
+    },
+    false
+);
 
 document.addEventListener(
     'mouseup',
@@ -46,10 +50,17 @@ document.addEventListener(
     false
 );
 
+var keysdown = [];
+
 document.addEventListener(
     'keydown',
     (event) => {
-        buttonDown(event.keyCode);
+        // Spam prevention
+        if (keysdown.includes(event.keyCode)) return;
+        keysdown.push(event.keyCode);
+
+        var key = document.getElementById(event.keyCode);
+        if (key) buttonDown(key.id);
     },
     false
 );
@@ -57,11 +68,18 @@ document.addEventListener(
 document.addEventListener(
     'keyup',
     (event) => {
-        document.getElementById(event.keyCode).classList.remove('active');
+        var key = document.getElementById(event.keyCode);
+        if (key) key.classList.remove('active');
+
+        // Remove keycode from spam prevention array
+        const index = keysdown.indexOf(event.keyCode);
+        if (index > -1) {
+            keysdown.splice(index, 1);
+        }
     },
     false
 );
 
-setInterval(() => {
-    document.getElementById('keyboard').classList.toggle('second-image');
-}, 125);
+// setInterval(() => {
+//     document.getElementById('keyboard').classList.toggle('second-image');
+// }, 125);
