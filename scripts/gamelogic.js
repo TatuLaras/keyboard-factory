@@ -1,39 +1,61 @@
 // Remember: in the UI 0 is on the right
 const itemInfoTexts = [
-    '<b>Delete items</b>', // 0
-    '<b>Use keys</b>', // 2
+    '<b>Delete facilities</b>', // 0
+    '<b>Use facilities</b>', // 2
     'Place a <b>production facility</b>', // 2
     'Place a <b>conveyor belt</b>', //3
-    'Place an <b>exporter</b>', //4
+    'Do nothing', //4
     '<b>Mine materials</b>', //5
+    'Do nothing', //6
+    'Do nothing', //7
+    'Do nothing', //8
+    'Do nothing', //9
 ];
 
 var selectedAction = 0;
 var infoTextElm = document.getElementById('numbar-details');
 
-// Todo dict of images
-var sprites = {
-    production: 'res/img/3d/production.png',
+var resourceTypes = ['IRON', 'COPPER'];
+
+var resourceAmounts = {
+    iron: 0,
+    copper: 0,
 };
 
-const placeProductionFacilityOnKey = (keycode) => {
+var facilityBuildResources = {
+    production: {
+        iron: 10,
+    },
+    conveyor: {
+        iron: 5,
+        copper: 5,
+    },
+};
+
+const placeFacilityOnKey = (keycode, facility) => {
     var key = document.getElementById(keycode);
     if (key) {
         var item = key.querySelector('.item');
         if (item) {
-            item.src = sprites['production'];
+            item.classList = '';
             item.classList.add('in-use');
+            item.classList.add('item');
+            item.classList.add(facility);
+        }
+    }
+};
+
+const removeFacilityOnKey = (keycode) => {
+    var key = document.getElementById(keycode);
+    if (key) {
+        var item = key.querySelector('.item');
+        if (item) {
+            item.classList.remove('in-use');
         }
     }
 };
 
 var mineString = '';
-
-var resourceTypes = ['IRON', 'COPPER'];
-var resourceAmounts = {
-    IRON: 0,
-    COPPER: 0,
-};
 
 // Mine by typing
 const mine = (keycode) => {
@@ -54,14 +76,14 @@ const mine = (keycode) => {
 
     if (completeMatch == true) {
         // Update data
-        resourceAmounts[mineString] += 1;
+        resourceAmounts[mineString.toLowerCase()] += 1;
         var counter = document.querySelector('#resources #' + mineString.toLowerCase());
         if (counter)
             counter.innerHTML =
                 mineString.charAt(0) +
                 mineString.slice(1).toLowerCase() +
                 ': ' +
-                resourceAmounts[mineString];
+                resourceAmounts[mineString.toLowerCase()];
 
         mineString = '';
     }
@@ -83,11 +105,22 @@ const changeNumbarItem = (num) => {
 // Called from events
 const performSelectedActionForKey = (keycode) => {
     switch (selectedAction) {
-        // Place facility
-        case 2:
-            placeProductionFacilityOnKey(keycode);
+        // Delete facility
+        case 0:
+            removeFacilityOnKey(keycode);
             break;
 
+        // Place production facility
+        case 2:
+            placeFacilityOnKey(keycode, 'production');
+            break;
+
+        // Place conveyor facility
+        case 3:
+            placeFacilityOnKey(keycode, 'conveyor');
+            break;
+
+        // Add letter to type mining
         case 5:
             mine(keycode);
             break;

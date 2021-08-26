@@ -62,13 +62,24 @@ body {
     width: 50px;
     height: 50px;
     z-index: 2;
+
+    background-size: cover;
+}
+
+#keyboard .key .item.production {
+    background-image: url('../res/img/3d/production.png');
+}
+
+#keyboard .key .item.conveyor {
+    background-image: url('../res/img/3d/conveyor/left.png');
+}
+
+#keyboard .key.active .item.conveyor {
+    background-image: url('../res/img/3d/conveyor/right.png');
 }
 
 #keyboard .key .item.in-use {
     display: block;
-}
-
-#keyboard.second-image .key .item {
 }
 
 /* Button press */
@@ -115,6 +126,7 @@ body {
     padding: 5px;
     margin: 4px;
     user-select: none;
+    background-size: cover;
 }
 
 .num-slot.active {
@@ -124,6 +136,32 @@ body {
 .num-slot.selected {
     border: 4px solid #fed330;
     padding: 3px;
+}
+
+.num-slot.slot-1 {
+    background-image: url('../res/img/3d/character.png');
+}
+.num-slot.slot-2 {
+    background-image: url('../res/img/3d/production.png');
+}
+.num-slot.slot-3 {
+    background-image: url('../res/img/3d/conveyor/left.png');
+}
+.num-slot.slot-4 {
+}
+.num-slot.slot-5 {
+    background-image: url('../res/img/3d/ore.png');
+}
+.num-slot.slot-6 {
+}
+.num-slot.slot-7 {
+}
+.num-slot.slot-8 {
+}
+.num-slot.slot-9 {
+}
+.num-slot.slot-0 {
+    background-image: url('../res/img/3d/delete.png');
 }
 
 #info-box {
