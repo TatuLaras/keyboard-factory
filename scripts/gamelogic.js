@@ -5,7 +5,7 @@ const itemInfoTexts = [
     'Place a <b>production facility</b>', // 2
     'Place a <b>conveyor belt</b>', //3
     'Do nothing', //4
-    '<b>Mine materials</b>', //5
+    '<b>Mine materials</b> by typing the name', //5
     'Do nothing', //6
     'Do nothing', //7
     'Do nothing', //8
